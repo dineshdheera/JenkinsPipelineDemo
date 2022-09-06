@@ -1,7 +1,7 @@
 node{
 
-   def tomcatWeb = 'd:\\apache-tomcat-9.0.65\\webapps'
-   def tomcatBin = 'd:\\apache-tomcat-9.0.65\\bin'
+   def tomcatWeb = 'e:\\apache-tomcat-10.0.23\\webapps'
+   def tomcatBin = 'e:\\apache-tomcat-10.0.23\\bin'
    def tomcatStatus = ''
    stage('SCM Checkout'){
      git 'https://github.com/cubeiplKumar/JenkinsPipelineDemo.git'
@@ -9,7 +9,7 @@ node{
    stage('Compile-Package-create-war-file'){
       // Get maven home path
       def mvnHome =  tool name: 'Maven', type: 'maven'   
-      bat "${mvnHome}/bin/mvn package"
+      bat "${mvnHome}\mvn\apache-maven-3.8.6\bin"
       }
 /*   stage ('Stop Tomcat Server') {
                bat ''' @ECHO OFF
